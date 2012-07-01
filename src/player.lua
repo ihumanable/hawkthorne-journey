@@ -49,6 +49,7 @@ function Player.new(collider)
     plyr.animations = {}
     plyr.warpin = false
     plyr.dead = false
+    plyr.bouncing = false
     plyr.crouch_state = 'crouch'
     plyr.gaze_state = 'gaze'
 
@@ -175,9 +176,9 @@ function Player:update(dt)
         self.velocity.y = game.max_y
     end
     -- end sonic physics
-    
+
     self.position.x = self.position.x + self.velocity.x * dt
-    self.position.y = self.position.y + self.velocity.y * dt
+    self.position.y = self.position.y + self.velocity.y * dt * (self.bouncing and -1 or 1)
 
     -- These calculations shouldn't need to be offset, investigate
     -- Min and max for the level
