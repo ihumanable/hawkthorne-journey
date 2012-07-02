@@ -9,15 +9,23 @@
    <property name="warpin" value="true"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYB7Fo5hGWAIHJkcPLw6MzyxceqhpFgAOWwRg
+   eJxjZmBgYB7FRGMOEjEnmn52JDlBErEQmlkCSHJSJGJpNLMkkeTIDRseLGISZGJRLGK8gxQDALE7CCU=
+  </data>
+ </layer>
+ <layer name="accents" width="19" height="11">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwVUqGiWMpn6uLGIKVHiEDSgiMaXAWJZIJaD8rmw4KEGADZ3AR8=
   </data>
  </layer>
  <objectgroup color="#0000a4" name="nodes" width="19" height="11">
   <object type="entrance" x="48" y="168" width="48" height="48"/>
-  <object type="bouncer" x="138" y="216" width="177" height="23"/>
+  <object type="door" x="336" y="168" width="24" height="48">
+   <properties>
+    <property name="level" value="hallway"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="floor" width="19" height="11">
-  <object type="floor" x="0" y="216" width="135" height="146"/>
-  <object type="floor" x="318" y="216" width="135" height="146"/>
+  <object type="floor" x="0" y="216" width="456" height="144"/>
  </objectgroup>
 </map>
