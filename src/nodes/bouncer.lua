@@ -2,6 +2,13 @@ local Bouncer = {}
 
 Bouncer.__index = Bouncer
 
+local sprite = love.graphics.newImage('images/hippy.png')
+sprite:setFilter('nearest', 'nearest')
+
+
+local web = love.graphics.newImage('images/web.png')
+web:setFilter('nearest', 'nearest')
+
 function Bouncer.new(node, collider)
     local bouncer = {}
     setmetatable(bouncer, Bouncer)
@@ -12,6 +19,8 @@ function Bouncer.new(node, collider)
     collider:setPassive(bouncer.bb)
 
     bouncer.position = { x = node.x, y = node.y }
+
+    bouncer.image = web
 
     bouncer.width = node.width
     bouncer.height = node.height
@@ -29,11 +38,7 @@ function Bouncer:collide_end(player, dt)
 end
 
 function Bouncer:draw()
-    self.bb:draw()
-    local r, g, b, a = love.graphics.getColor()
-    love.graphics.setColor(255, 0, 0)
-    love.graphics.rectangle('fill', self.position.x, self.position.y, self.width, self.height)
-    love.graphics.setColor(r, g, b, a)
+	love.graphics.draw(self.image, self.position.x, self.position.y, 0, self.width / self.image:getWidth(), self.height / self.image:getHeight())
 end
 
 return Bouncer
